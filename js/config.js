@@ -29,7 +29,9 @@ class Config {
 	  }
 	}
 	
-	setInterval(() => this.backup(), 5000);
+	$('#load-button').on('click', () => {
+	  setInterval(() => this.backup(), 5000);
+	});
   }
   
   loadConfig(file) {
