@@ -18,6 +18,7 @@ class OneMap {
 	}
 	
 	$(document).on('keydown', (e) => this.onKeyDown(e));
+	$('.swap-map').on('click', () => this.swap());
 	$('#dark-world').css('display', 'none').appendTo('#one-map');
 	$('#light-world').css('display', 'block').appendTo('#one-map');
 	$('#light-world-container').css('display', 'none');
@@ -28,7 +29,11 @@ class OneMap {
     if (e.keyCode !== 9) {
 	  return;
 	}
-	const lw = this.#isLightWorld = !this.#isLightWorld;
+	this.swap();
+  }
+  
+  swap() {
+    const lw = this.#isLightWorld = !this.#isLightWorld;
 	$('#dark-world').css('display', lw ? 'none' : 'block');
 	$('#light-world').css('display', lw ? 'block' : 'none');
 	e.preventDefault();
