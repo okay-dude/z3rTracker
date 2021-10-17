@@ -18,6 +18,9 @@ class Config {
 	  $('#options').css('display', 'none');
 	  $('#tracker').css('display', 'block');
 	});
+	$('#load-button').on('click', () => {
+	  setInterval(() => this.backup(), 5000);
+	});
 	
 	const bk = sessionStorage.getItem('backup');
 	if (bk) {
@@ -29,9 +32,7 @@ class Config {
 	  }
 	}
 	
-	$('#load-button').on('click', () => {
-	  setInterval(() => this.backup(), 5000);
-	});
+
   }
   
   loadConfig(file) {
