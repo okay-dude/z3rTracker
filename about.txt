@@ -1,0 +1,5 @@
+if you reuse this code maybe give the people who contributed to it some credit
+
+ggw - built most of the tracker
+fearagent - icon work and some styling touch up
+dunka/bonta - auto tracking code and a couple icons stolen from dunkas tracker

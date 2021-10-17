@@ -1,0 +1,506 @@
+<html>
+	<head>
+		<meta content="text/html;charset=utf-8" http-equiv="Content-Type">
+		<meta http-equiv="Cache-Control" content="no-cache, no-store, must-revalidate" />
+		<meta http-equiv="Pragma" content="no-cache" />
+		<meta http-equiv="Expires" content="0" />
+		<title>Berserker's Tracker by GGW</title>
+
+		<script src="js/jquery-3.3.1.js"></script>
+		<link rel="stylesheet" type="text/css" href="css/style.css">
+		
+		<script src="js/settings.js"></script>
+		<script src="js/config.js"></script>
+		<script src="js/block.js"></script>
+		<script src="js/one-map.js"></script>
+		<script src="js/text-tracker.js"></script>
+		<script src="js/map-tracker.js"></script>
+		<script src="js/mover.js"></script>
+		<script src="js/resizer.js"></script>
+		<script src="js/zoomer.js"></script>
+		<script src="js/menu.js"></script>
+		<script src="js/autot.js"></script>
+		<script src="js/index.js"></script>
+	</head>
+
+	<body>
+		<div id="options">
+			<div class="options-title">Settings</div>
+			<div class="file-container">
+				Config: <input id="config-file" type="file" />
+			</div>
+			<div class="input-wrapper">
+				<input type="checkbox" value="1" id="enable-one-map" /> Use one map (tab switches between maps)
+			</div>
+			<div class="input-wrapper">
+				<input type="checkbox" value="1" id="enable-drop-down" /> Drop-Downs On/Off
+			</div>
+			<div class="input-wrapper">
+				<input type="checkbox" value="1" id="enable-multi" /> Multi On/Off
+			</div>
+			<div class="input-wrapper">
+				<input type="checkbox" value="1" id="enable-single" /> Single On/Off
+			</div>
+			<div class="input-wrapper">
+				<input type="checkbox" value="1" id="enable-visible" /> Visible On/Off
+			</div>
+			<div class="input-wrapper">
+				<input type="checkbox" value="1" id="enable-overworld" /> Overworld On/Off
+			</div>
+			<div class="input-wrapper">
+				<input type="checkbox" value="1" id="enable-connectors" /> Connectors On/Off
+			</div>
+			<div class="input-wrapper">
+				<input type="checkbox" value="1" id="enable-auto-tracking" /> Auto-Tracking On/Off
+			</div>
+			<div class="input-wrapper">
+				<input type="text" value="8080" id="auto-tracking-port" /> Auto-Tracking Port
+			</div>
+			<div class="button-container">
+				<button id="load-button">OK Dude</button>
+			</div>
+		</div>
+		<div id="tracker">
+			<div id="drop-down" class="location-container drag-container resizer-container">
+				<div class="text-title drag">Drop downs</div>
+				<div class="text-location blue" data-chest="55" data-chesttype="visible">escape</div>
+				<div class="text-location blue" data-chesttype="visible">ganon</div>
+				<div class="text-location blue" data-chest="14" data-chesttype="visible">kak well</div>
+				<div class="text-location blue" data-chest="36" data-chesttype="visible">lost woods</div>
+				<div class="text-location blue" data-chest="37" data-chesttype="visible">lumberjack</div>
+				<div class="text-location blue" data-chest="59" data-chesttype="visible">magic bat</div>
+				<div class="text-location blue" data-chest="56">uncle</div>
+				<div class="text-location blue">useless fairy</div>
+				<div class="resizer"></div>
+			</div>
+			<div id="multi-chest" class="location-container drag-container resizer-container">
+				<div class="text-title drag">Multi</div>
+				<div class="text-location blue" data-chest="17">paradox</div>
+				<div class="text-location blue" data-chest="15">blinds hut</div>
+				<div class="text-location blue" data-chest="16">hype cave</div>
+				<div class="text-location blue" data-chest="19">mini mdorm</div>
+				<div class="text-location blue" data-chest="71" data-chesttype="multi">HS cave</div>
+				<div class="text-location blue" data-chest="70" data-chesttype="multi">saha</div>
+				<div class="text-location blue" data-chest="10">mire shed</div>
+				<div class="text-location blue" data-chest="61">pyr fairy</div>
+				<div class="text-location blue" data-chest="11">super bunny</div>
+				<div class="text-location blue" data-chest="64">waterfall</div>
+				<div class="resizer"></div>
+			</div>
+			<div id="single-chest" class="location-container drag-container resizer-container">
+				<div class="text-title drag">Single</div>
+				<div class="text-location blue" data-chest="9">agina</div>
+				<div class="text-location blue" data-chest="18">bonk rocks</div>
+				<div class="text-location blue" data-chest="7">brewery</div>
+				<div class="text-location blue" data-chest="8">c house</div>
+				<div class="text-location blue" data-chest="39">cave 45</div>
+				<div class="text-location blue" data-chest="41">checkerboard</div>
+				<div class="text-location blue" data-chest="23">chest game</div>
+				<div class="text-location blue" data-chest="6">chickens</div>
+				<div class="text-location blue" data-chest="1">dam chest</div>
+				<div class="text-location blue" data-chest="40">GYL</div>
+				<div class="text-location blue" data-chest="42">hammer pegs</div>
+				<div class="text-location blue" data-chest="20">IR cave</div>
+				<div class="text-location blue" data-chest="5">kak tavern</div>
+				<div class="text-location blue" data-chest="72">kings tomb</div>
+				<div class="text-location blue" data-chest="43" data-chesttype="visible">library</div>
+				<div class="text-location blue" data-chest="2">links house</div>
+				<div class="text-location blue" data-chest="4">mimic cave</div>
+				<div class="text-location blue" data-chest="35">potion shop</div>
+				<div class="text-location blue" data-chest="27">sick kid</div>
+				<div class="text-location blue" data-chest="38" data-chesttype="visible">spec CAVE</div>
+				<div class="text-location blue" data-chest="13">spike cave</div>
+				<div class="text-location blue" data-chest="3">spiral cave</div>
+				<div class="resizer"></div>
+			</div>
+			<div id="visible-items" class="location-container drag-container resizer-container">
+				<div class="text-title drag">Visible Items</div>
+				<div class="text-location blue" data-chest="50" data-chesttype="visible">bumper ledge</div>
+				<div class="text-location blue" data-chest="48" data-chesttype="visible">desert ledge</div>
+				<div class="text-location blue" data-chest="46" data-chesttype="visible">floating isl</div>
+				<div class="text-location blue" data-chest="49" data-chesttype="visible">hylia island</div>
+				<div class="text-location blue" data-chest="47" data-chesttype="visible">maze game</div>
+				<div class="text-location blue" data-chest="51" data-chesttype="visible">pyramid</div>
+				<div class="text-location blue" data-chest="45" data-chesttype="visible">spec ROCK</div>
+				<div class="text-location blue" data-chest="53" data-chesttype="visible">zora ledge</div>
+				<div class="text-location blue" data-chest="31" data-chesttype="visible">bombos tab</div>
+				<div class="text-location blue" data-chest="30" data-chesttype="visible">ether tab</div>
+				<div class="text-location blue" data-chest="62" data-chesttype="visible">ped</div>
+				<div class="text-location blue" data-chesttype="visible">desert torch</div>
+				<div class="text-location blue" data-chesttype="visible">gt torch</div>
+				<div class="resizer"></div>
+			</div>
+			<div id="overworld" class="location-container drag-container resizer-container">
+				<div class="text-title drag">Overworld</div>
+				<div class="text-location blue" data-chest="54">1 dig</div>
+				<div class="text-location blue" data-chest="52">30 digs</div>
+				<div class="text-location blue" data-chest="24">bottle vend</div>
+				<div class="text-location blue" data-chest="32">catfish</div>
+				<div class="text-location blue" data-chest="29">hobo</div>
+				<div class="text-location blue" data-chest="44">mushroom</div>
+				<div class="text-location blue" data-chest="34">old man</div>
+				<div class="text-location blue" data-chest="28">purple chest</div>
+				<div class="text-location blue" data-chest="60">smiths</div>
+				<div class="text-location blue" data-chest="26">stumpy</div>
+				<div class="text-location blue" data-chest="69">sunken item</div>
+				<div class="text-location blue" data-chest="33">zora</div>
+				<div class="resizer"></div>
+			</div>
+			<div id="connectors" class="location-container drag-container resizer-container">
+				<div class="text-title drag">Connectors</div>
+				<div class="resizer"></div>
+			</div>
+			
+			<div id="one-map" class="one-map map-container drag-container zoomer-container">
+				<div class="zoom-in">+</div>
+				<div class="zoom-out">-</div>
+				<div class="drag-map drag"></div>
+			</div>
+			
+			<div id="dark-world-container" class="map-container drag-container zoomer-container">
+				<div class="zoom-in">+</div>
+				<div class="zoom-out">-</div>
+				<div class="drag-map drag"></div>
+				<div id="dark-world" class="map-tracker"></div>
+			</div>
+			<div id="light-world-container" class="map-container drag-container zoomer-container">
+				<div class="zoom-in">+</div>
+				<div class="zoom-out">-</div>
+				<div class="drag-map drag"></div>
+				<div id="light-world" class="map-tracker"></div>
+			</div>
+			
+			<div class="menu-container">
+				<div class="location-menu">
+					<div class="icon" data-key="hy-up" data-connector="true">
+						<div class="icon-text hy-color up">
+							Hy
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="hy-left" data-connector="true">
+						<div class="icon-text hy-color left">
+							Hy
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="hy-right" data-connector="true">
+						<div class="icon-text hy-color right">
+							Hy
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="paradox-up" data-connector="true">
+						<div class="icon-image paradox up">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="paradox-mid" data-connector="true">
+						<div class="icon-image paradox mid">
+							<div class="icon-arrow">^</div>
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="paradox-down" data-connector="true">
+						<div class="icon-image paradox down">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="ag">
+						<div class="icon-text ag-color">Ag</div>
+					</div>
+					<div class="icon" data-key="saha">
+						<div class="icon-text saha-color">SH</div>
+					</div>
+					<div class="icon" data-key="bk" data-amount="unlimited">
+						<div class="icon-image bigkey"></div>
+					</div>
+					<div class="icon" data-key="e">
+						<div class="icon-text e-color">E</div>
+					</div>
+					<div class="icon" data-key="h">
+						<div class="icon-text h-color">H</div>
+					</div>
+					<div class="icon" data-key="d-down">
+						<div class="icon-text d-color down">
+							D
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="d-left" data-connector="true">
+						<div class="icon-text d-color left">
+							D
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="d-right" data-connector="true">
+						<div class="icon-text d-color right">
+							D
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="d-up" data-connector="true">
+						<div class="icon-text d-color up">
+							D
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="gt">
+						<div class="icon-text gt-color">GT</div>
+					</div>
+					<div class="icon" data-key="kid">
+						<div class="icon-image kid"></div>
+					</div>
+					<div class="icon" data-key="sk" data-amount="unlimited">
+						<div class="icon-image smallkey"></div>
+					</div>
+					<div class="icon" data-key="pod">
+						<div class="icon-text pod-color">Pod</div>
+					</div>
+					<div class="icon" data-key="sp">
+						<div class="icon-text sp-color">SP</div>
+					</div>
+					<div class="icon" data-key="sw">
+						<div class="icon-text sw-color">SW</div>
+					</div>
+					<div class="icon" data-key="tt">
+						<div class="icon-text tt-color">TT</div>
+					</div>
+					<div class="icon" data-key="ip">
+						<div class="icon-text ip-color">IP</div>
+					</div>
+					<div class="icon" data-key="mm">
+						<div class="icon-text mm-color">MM</div>
+					</div>
+					<div class="icon" data-key="gn">
+						<div class="icon-text gn-color">Gn</div>
+					</div>
+					<div class="icon" data-key="smt">
+						<div class="icon-text smt-color">Smt</div>
+					</div>
+					<div class="icon" data-key="small-chest" data-amount="unlimited">
+						<div class="icon-image small-chest"></div>
+					</div>
+					<div class="icon" data-key="tr-down" data-connector="true">
+						<div class="icon-text tr-color down">
+							TR
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="tr-left" data-connector="true">
+						<div class="icon-text tr-color left">
+							TR
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="tr-right" data-connector="true">
+						<div class="icon-text tr-color right">
+							TR
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="tr-up" data-connector="true">
+						<div class="icon-text tr-color up">
+							TR
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="mimic">
+						<div class="icon-image mimic"></div>
+					</div>
+					<div class="icon" data-key="potion">
+						<div class="icon-image potion"></div>
+					</div>
+					<div class="icon" data-key="redbomb">
+						<div class="icon-image red-bomb"></div>
+					</div>
+					<div class="icon" data-key="lib">
+						<div class="icon-text lib-color">Lib</div>
+					</div>
+					<div class="icon" data-key="multi" data-amount="unlimited">
+						<div class="icon-image multi-chest"></div>
+					</div>
+					<div class="icon" data-key="lamp" data-amount="unlimited">
+						<div class="icon-image lamp"></div>
+					</div>
+					<div class="icon" data-key="hamglove">
+						<div class="icon-image hamglove"></div>
+					</div>
+					<div class="icon" data-key="hammer" data-amount="unlimited">
+						<div class="icon-image hammer"></div>
+					</div>
+					<div class="icon" data-key="bat">
+						<div class="icon-image powder"></div>
+					</div>
+					<div class="icon" data-key="hs-up" data-connector="true">
+						<div class="icon-image hookshot up">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="hs-down" data-connector="true">
+						<div class="icon-image hookshot down">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="rescue-up" data-connector="true">
+						<div class="icon-image rescue up">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="rescue-down" data-connector="true">
+						<div class="icon-image rescue down">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="important" data-amount="unlimited">
+						<div class="icon-text important-color">
+							!!!
+						</div>
+					</div>
+					<div class="icon" data-key="old-man-up" data-connector="true">
+						<div class="icon-image old-man up">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="old-man-down" data-connector="true">
+						<div class="icon-image old-man down">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="dd-left" data-connector="true">
+						<div class="icon-text dd-color left">
+							DD
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="dd-right" data-connector="true">
+						<div class="icon-text dd-color right">
+							DD
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="fa-down" data-connector="true">
+						<div class="icon-text fa-color down">
+							FA
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="fa-up" data-connector="true">
+						<div class="icon-text fa-color up">
+							FA
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="spiral-up" data-connector="true">
+						<div class="icon-image spiral up">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="spiral-down" data-connector="true">
+						<div class="icon-image spiral down">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="entrance" data-amount="unlimited">
+						<div class="icon-image entrance"></div>
+					</div>
+					<div class="icon" data-key="bumper-up" data-connector="true">
+						<div class="icon-image bumper up">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="bumper-down" data-connector="true">
+						<div class="icon-image bumper down">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="brothers-right" data-connector="true">
+						<div class="icon-image brother right">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="brothers-left" data-connector="true">
+						<div class="icon-image brother left">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="woman-right" data-connector="true">
+						<div class="icon-image woman right">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="woman-left" data-connector="true">
+						<div class="icon-image woman left">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="spectacle-up" data-connector="true">
+						<div class="icon-text sr-color up">
+							SR
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="spectacle-mid" data-connector="true">
+						<div class="icon-text sr-color mid">
+							SR
+							<div class="icon-arrow">^</div>
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="spectacle-down" data-connector="true">
+						<div class="icon-text sr-color down">
+							SR
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon" data-key="1" data-amount="unlimited">
+						<div class="icon-text number-color">
+							1
+						</div>
+					</div>
+					<div class="icon" data-key="2" data-amount="unlimited">
+						<div class="icon-text number-color">
+							2
+						</div>
+					</div>
+					<div class="icon" data-key="3" data-amount="unlimited">
+						<div class="icon-text number-color">
+							3
+						</div>
+					</div>
+					<div class="icon" data-key="4" data-amount="unlimited">
+						<div class="icon-text number-color">
+							4
+						</div>
+					</div>
+					<div class="icon" data-key="5" data-amount="unlimited">
+						<div class="icon-text number-color">
+							5
+						</div>
+					</div>
+					<div class="icon" data-key="6" data-amount="unlimited">
+						<div class="icon-text number-color">
+							6
+						</div>
+					</div>
+					<div class="icon" data-key="7" data-amount="unlimited">
+						<div class="icon-text number-color">
+							7
+						</div>
+					</div>
+					<div class="icon" data-key="8" data-amount="unlimited">
+						<div class="icon-text number-color">
+							8
+						</div>
+					</div>
+					<div class="icon" data-key="bomb" data-amount="unlimited">
+						<div class="icon-image bomb"></div>
+					</div>
+				</div>
+			</div>
+			
+			<div class="save">Save</div>
+		</div>
+		<div id="autotrackingstatus">&nbsp;</div>
+	</body>
+</html>
