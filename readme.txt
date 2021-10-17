@@ -1,3 +1,13 @@
+To download/install:
+
+1. Go to the releases table.
+
+2. Download source file zip.
+
+3. Unzip into a folder.
+
+------
+
 How to run:
 
 1. Open index.html in a web browser. 
