@@ -32,6 +32,18 @@ body {
   z-index: -1;
 }
 
+.swap-map {
+  width: 32px;
+  height: 32px;
+  position: absolute;
+  bottom: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, .5);
+  background-image: url(../icons/swap.png);
+}
+
 #tracker {
   display: none;
 }
