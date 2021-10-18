@@ -635,6 +635,14 @@ body {
 .saha-color {
   color: rgb(0, 168, 72);
 }
+.psh-color {
+  color: rgb(156, 120, 252);
+  font-size: 11px;
+}
+.bsh-color {
+  color: rgb(218, 2, 86);
+  font-size: 11px;
+}
 .smt-color {
   color: rgb(144, 148, 254);
   font-size: 12px;
