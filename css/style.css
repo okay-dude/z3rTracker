@@ -490,11 +490,21 @@ body {
   height: 603px;
 }
 
+.og-sephs .new-icons-only {
+  display: none;
+}
+.new-icons .og-sephs-only {
+  display: none;
+}
+
 .icon-image.kid {
   background-image: url(../icons/kid.png);
 }
 .icon-image.powder {
   background-image: url(../icons/powder.png);
+}
+.icon-image.cape {
+  background-image: url(../icons/cape.png);
 }
 .icon-image.potion {
   background-image: url(../icons/potion.png);
@@ -508,8 +518,14 @@ body {
 .icon-image.bomb {
   background-image: url(../icons/bomb.png);
 }
-.icon-image.entrance {
+.icon-image.boots {
+  background-image: url(../icons/boots.png);
+}
+.new-icons .icon-image.entrance {
   background-image: url(../icons/entrance.png);
+}
+.og-sephs .icon-image.entrance {
+  background-image: url(../icons/ether.png);
 }
 .icon-image.lamp {
   background-image: url(../icons/lamp.png);
@@ -631,6 +647,9 @@ body {
 }
 .sr-color {
   color: rgb(255, 0, 235);
+}
+.sb-color {
+  color: rgb(199, 55, 88);
 }
 .number-color {
   color: rgb(252, 248, 252);

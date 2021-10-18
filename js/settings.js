@@ -10,9 +10,18 @@ class Settings {
 	visible: 1,
 	overworld: 1,
 	connectors: 1,
+	ogSephs: 0,
 	autoTracking: 0,
 	autoTrackingPort: 8080
   };
+  
+  constructor() {
+    $('#load-button').on('click', () => {
+	  const ogSephs = $('#enable-og-sephs').is(':checked') ? 1 : 0;
+	  
+	  $('body').addClass(ogSephs ? 'og-sephs' : 'new-icons');
+	});
+  }
   
   getSettings() {
     return {
@@ -23,6 +32,7 @@ class Settings {
 	  visible: $('#enable-visible').is(':checked') ? 1 : 0,
 	  overworld: $('#enable-overworld').is(':checked') ? 1 : 0,
 	  connectors: $('#enable-connectors').is(':checked') ? 1 : 0,
+	  ogSephs: $('#enable-og-sephs').is(':checked') ? 1 : 0,
 	  autoTracking: $('#enable-auto-tracking').is(':checked') ? 1 : 0,
 	  autoTrackingPort: $('#auto-tracking-port').val()
 	};
@@ -41,6 +51,7 @@ class Settings {
 	$('#enable-visible').prop('checked', !!this.#settings.visible);
 	$('#enable-overworld').prop('checked', !!this.#settings.overworld);
 	$('#enable-connectors').prop('checked', !!this.#settings.connectors);
+	$('#enable-og-sephs').prop('checked', !!this.#settings.ogSephs);
 	$('#enable-auto-tracking').prop('checked', !!this.#settings.autoTracking);
 	$('#auto-tracking-port').val(this.#settings.autoTrackingPort);
   }

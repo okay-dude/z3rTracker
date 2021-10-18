@@ -30,7 +30,7 @@
 				Config: <input id="config-file" type="file" />
 			</div>
 			<div class="input-wrapper">
-				<input type="checkbox" value="1" id="enable-one-map" /> Use one map (tab switches between maps)
+				<input type="checkbox" value="1" id="enable-one-map" /> Use one map (tab or backspace switches between maps)
 			</div>
 			<div class="input-wrapper">
 				<input type="checkbox" value="1" id="enable-drop-down" /> Drop-Downs On/Off
@@ -49,6 +49,9 @@
 			</div>
 			<div class="input-wrapper">
 				<input type="checkbox" value="1" id="enable-connectors" /> Connectors On/Off
+			</div>
+			<div class="input-wrapper">
+				<input type="checkbox" value="1" id="enable-og-sephs" /> The new icons confuse me, give me old seph's with a few more things
 			</div>
 			<div class="input-wrapper">
 				<input type="checkbox" value="1" id="enable-auto-tracking" /> Auto-Tracking On/Off
@@ -191,21 +194,30 @@
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="paradox-up" data-connector="true">
+					<div class="icon new-icons-only" data-key="paradox-up" data-connector="true">
 						<div class="icon-image paradox up">
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="paradox-mid" data-connector="true">
+					<div class="icon new-icons-only" data-key="paradox-mid" data-connector="true">
 						<div class="icon-image paradox mid">
 							<div class="icon-arrow">^</div>
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="paradox-down" data-connector="true">
+					<div class="icon new-icons-only" data-key="paradox-down" data-connector="true">
 						<div class="icon-image paradox down">
 							<div class="icon-arrow">^</div>
 						</div>
+					</div>
+					<div class="icon empty og-sephs-only">
+						<div class="icon-text"></div>
+					</div>
+					<div class="icon empty og-sephs-only">
+						<div class="icon-text"></div>
+					</div>
+					<div class="icon empty og-sephs-only">
+						<div class="icon-text"></div>
 					</div>
 					<div class="icon" data-key="ag">
 						<div class="icon-text ag-color">Ag</div>
@@ -306,19 +318,33 @@
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="mimic">
+					<div class="icon new-icons-only" data-key="mimic">
 						<div class="icon-image mimic"></div>
 					</div>
-					<div class="icon" data-key="potion">
+					<div class="icon og-sephs-only" data-key="hookshot">
+						<div class="icon-image hookshot"></div>
+					</div>
+					<div class="icon og-sephs-only" data-key="og-potion">
+						<div class="icon-text smt-color">P.Sh</div>
+					</div>
+					<div class="icon new-icons-only" data-key="potion">
 						<div class="icon-image potion"></div>
 					</div>
-					<div class="icon" data-key="redbomb">
+					<div class="icon og-sephs-only" data-key="og-potion">
+						<div class="icon-text smt-color">B.Sh</div>
+					</div>
+					<div class="icon new-icons-only" data-key="redbomb">
 						<div class="icon-image red-bomb"></div>
 					</div>
 					<div class="icon" data-key="lib">
 						<div class="icon-text lib-color">Lib</div>
 					</div>
-					<div class="icon" data-key="multi" data-amount="unlimited">
+					<div class="icon og-sephs-only" data-key="important2" data-amount="unlimited">
+						<div class="icon-text important-color">
+							!!!
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="multi" data-amount="unlimited">
 						<div class="icon-image multi-chest"></div>
 					</div>
 					<div class="icon" data-key="lamp" data-amount="unlimited">
@@ -330,127 +356,154 @@
 					<div class="icon" data-key="hammer" data-amount="unlimited">
 						<div class="icon-image hammer"></div>
 					</div>
+					<div class="icon og-sephs-only" data-key="cape">
+						<div class="icon-image cape"></div>
+					</div>
 					<div class="icon" data-key="bat">
 						<div class="icon-image powder"></div>
 					</div>
-					<div class="icon" data-key="hs-up" data-connector="true">
+					<div class="icon new-icons-only" data-key="hs-up" data-connector="true">
 						<div class="icon-image hookshot up">
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="hs-down" data-connector="true">
+					<div class="icon new-icons-only" data-key="hs-down" data-connector="true">
 						<div class="icon-image hookshot down">
-							<div class="icon-arrow">^</div>
-						</div>
-					</div>
-					<div class="icon" data-key="rescue-up" data-connector="true">
-						<div class="icon-image rescue up">
-							<div class="icon-arrow">^</div>
-						</div>
-					</div>
-					<div class="icon" data-key="rescue-down" data-connector="true">
-						<div class="icon-image rescue down">
-							<div class="icon-arrow">^</div>
-						</div>
-					</div>
-					<div class="icon" data-key="important" data-amount="unlimited">
-						<div class="icon-text important-color">
-							!!!
-						</div>
-					</div>
-					<div class="icon" data-key="old-man-up" data-connector="true">
-						<div class="icon-image old-man up">
-							<div class="icon-arrow">^</div>
-						</div>
-					</div>
-					<div class="icon" data-key="old-man-down" data-connector="true">
-						<div class="icon-image old-man down">
-							<div class="icon-arrow">^</div>
-						</div>
-					</div>
-					<div class="icon" data-key="dd-left" data-connector="true">
-						<div class="icon-text dd-color left">
-							DD
-							<div class="icon-arrow">^</div>
-						</div>
-					</div>
-					<div class="icon" data-key="dd-right" data-connector="true">
-						<div class="icon-text dd-color right">
-							DD
-							<div class="icon-arrow">^</div>
-						</div>
-					</div>
-					<div class="icon" data-key="fa-down" data-connector="true">
-						<div class="icon-text fa-color down">
-							FA
-							<div class="icon-arrow">^</div>
-						</div>
-					</div>
-					<div class="icon" data-key="fa-up" data-connector="true">
-						<div class="icon-text fa-color up">
-							FA
-							<div class="icon-arrow">^</div>
-						</div>
-					</div>
-					<div class="icon" data-key="spiral-up" data-connector="true">
-						<div class="icon-image spiral up">
-							<div class="icon-arrow">^</div>
-						</div>
-					</div>
-					<div class="icon" data-key="spiral-down" data-connector="true">
-						<div class="icon-image spiral down">
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
 					<div class="icon" data-key="entrance" data-amount="unlimited">
 						<div class="icon-image entrance"></div>
 					</div>
-					<div class="icon" data-key="bumper-up" data-connector="true">
-						<div class="icon-image bumper up">
+					<div class="icon" data-key="glove" data-amount="unlimited">
+						<div class="icon-image glove"></div>
+					</div>
+					<div class="icon og-sephs-only" data-key="boots" data-amount="unlimited">
+						<div class="icon-image boots"></div>
+					</div>
+					<div class="icon og-sephs-only" data-key="og-bomb" data-amount="unlimited">
+						<div class="icon-image bomb"></div>
+					</div>
+					<div class="icon new-icons-only" data-key="important" data-amount="unlimited">
+						<div class="icon-text important-color">
+							!!!
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="rescue-up" data-connector="true">
+						<div class="icon-image rescue up">
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="bumper-down" data-connector="true">
-						<div class="icon-image bumper down">
+					<div class="icon new-icons-only" data-key="rescue-down" data-connector="true">
+						<div class="icon-image rescue down">
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="brothers-right" data-connector="true">
+					<div class="icon new-icons-only" data-key="old-man-up" data-connector="true">
+						<div class="icon-image old-man up">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="old-man-down" data-connector="true">
+						<div class="icon-image old-man down">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="dd-left" data-connector="true">
+						<div class="icon-text dd-color left">
+							DD
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="dd-right" data-connector="true">
+						<div class="icon-text dd-color right">
+							DD
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="brothers-right" data-connector="true">
 						<div class="icon-image brother right">
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="brothers-left" data-connector="true">
+					<div class="icon new-icons-only" data-key="brothers-left" data-connector="true">
 						<div class="icon-image brother left">
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="woman-right" data-connector="true">
-						<div class="icon-image woman right">
+					<div class="icon new-icons-only" data-key="boots2" data-amount="unlimited">
+						<div class="icon-image boots"></div>
+					</div>
+					<div class="icon new-icons-only" data-key="fa-down" data-connector="true">
+						<div class="icon-text fa-color down">
+							FA
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="woman-left" data-connector="true">
-						<div class="icon-image woman left">
+					<div class="icon new-icons-only" data-key="fa-up" data-connector="true">
+						<div class="icon-text fa-color up">
+							FA
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="spectacle-up" data-connector="true">
+					<div class="icon new-icons-only" data-key="spiral-up" data-connector="true">
+						<div class="icon-image spiral up">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="spiral-down" data-connector="true">
+						<div class="icon-image spiral down">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="bumper-up" data-connector="true">
+						<div class="icon-image bumper up">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="bumper-down" data-connector="true">
+						<div class="icon-image bumper down">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="spectacle-up" data-connector="true">
 						<div class="icon-text sr-color up">
 							SR
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="spectacle-mid" data-connector="true">
+					<div class="icon new-icons-only" data-key="spectacle-mid" data-connector="true">
 						<div class="icon-text sr-color mid">
 							SR
 							<div class="icon-arrow">^</div>
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
-					<div class="icon" data-key="spectacle-down" data-connector="true">
+					<div class="icon new-icons-only" data-key="spectacle-down" data-connector="true">
 						<div class="icon-text sr-color down">
 							SR
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="super-top" data-connector="true">
+						<div class="icon-text sb-color up">
+							SB
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="super-bot" data-connector="true">
+						<div class="icon-text sb-color down">
+							SB
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="woman-right" data-connector="true">
+						<div class="icon-image woman right">
+							<div class="icon-arrow">^</div>
+						</div>
+					</div>
+					<div class="icon new-icons-only" data-key="woman-left" data-connector="true">
+						<div class="icon-image woman left">
 							<div class="icon-arrow">^</div>
 						</div>
 					</div>
@@ -479,23 +532,70 @@
 							5
 						</div>
 					</div>
-					<div class="icon" data-key="6" data-amount="unlimited">
+					<div class="icon og-sephs-only" data-key="6" data-amount="unlimited">
 						<div class="icon-text number-color">
 							6
 						</div>
 					</div>
-					<div class="icon" data-key="7" data-amount="unlimited">
+					<div class="icon og-sephs-only" data-key="7" data-amount="unlimited">
 						<div class="icon-text number-color">
 							7
 						</div>
 					</div>
-					<div class="icon" data-key="8" data-amount="unlimited">
+					<div class="icon og-sephs-only" data-key="8" data-amount="unlimited">
 						<div class="icon-text number-color">
 							8
 						</div>
 					</div>
-					<div class="icon" data-key="bomb" data-amount="unlimited">
-						<div class="icon-image bomb"></div>
+					<div class="icon og-sephs-only" data-key="8" data-amount="unlimited">
+						<div class="icon-text number-color">
+							9
+						</div>
+					</div>
+					<div class="icon og-sephs-only" data-key="letter-A" data-amount="unlimited">
+						<div class="icon-text number-color">
+							A
+						</div>
+					</div>
+					<div class="icon og-sephs-only" data-key="letter-B" data-amount="unlimited">
+						<div class="icon-text number-color">
+							B
+						</div>
+					</div>
+					<div class="icon og-sephs-only" data-key="letter-C" data-amount="unlimited">
+						<div class="icon-text number-color">
+							C
+						</div>
+					</div>
+					<div class="icon og-sephs-only" data-key="letter-D" data-amount="unlimited">
+						<div class="icon-text number-color">
+							D
+						</div>
+					</div>
+					<div class="icon og-sephs-only" data-key="letter-F" data-amount="unlimited">
+						<div class="icon-text number-color">
+							F
+						</div>
+					</div>
+					<div class="icon og-sephs-only" data-key="letter-G" data-amount="unlimited">
+						<div class="icon-text number-color">
+							G
+						</div>
+					</div>
+					<div class="icon og-sephs-only" data-key="letter-J" data-amount="unlimited">
+						<div class="icon-text number-color">
+							J
+						</div>
+					</div>
+					<div class="icon og-sephs-only" data-key="letter-K" data-amount="unlimited">
+						<div class="icon-text number-color">
+							K
+						</div>
+					</div>
+					<div class="icon og-sephs-only" data-key="letter-L" data-amount="unlimited">
+						<div class="icon-text number-color">
+							L
+						</div>
 					</div>
 				</div>
 			</div>
