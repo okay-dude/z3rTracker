@@ -3,14 +3,13 @@ class MapTracker {
   #menu = null;
   
   #icons = new Map();
-  #zoomer = null;
   
   constructor(el, zoomer) {
     this.#el = el;
-	this.#zoomer = zoomer;
 	this.#menu = new Menu(
       $(el).find('.menu-container')[0],
-	  (icon, x, y) => this.addIcon(icon, x, y)
+	  (icon, x, y) => this.addIcon(icon, x, y),
+	  zoomer,
 	);
 	
 	$(el).on('contextmenu', e => {
@@ -34,9 +33,6 @@ class MapTracker {
 	if (adjust && cloneJq.find('.icon-image')[0]) {
 	  y += 2;
 	}
-	const zoom = this.#zoomer.getZoom(this.#el);
-	x = x / zoom;
-	y = y / zoom;
 	cloneJq.addClass('placed').css({ left: x, top: y });
 	const key = cloneJq.data('key');
 	if (!key) {

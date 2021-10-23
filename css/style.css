@@ -44,6 +44,18 @@ body {
   background-image: url(../icons/swap.png);
 }
 
+.find-item {
+  width: 24px;
+  height: 24px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  z-index: 2;
+  cursor: pointer;
+  background-color: rgba(255, 255, 255, .5);
+  background-image: url(../icons/search.png);
+}
+
 #tracker {
   display: none;
 }
@@ -176,20 +188,20 @@ body {
   text-align: center;
 }
 .zoom-in {
-  top: -20px;
-  right: 40px;
+  bottom: 0;
+  left: 60px;
   background-color: #4455BB;
 }
 .zoom-out {
-  top: -20px;
-  right: 60px;
+  bottom: 0;
+  left: 30px;
   background-color: #BB5544;
 }
 
 .drag-map {
   position: absolute;
-  top: -20px;
-  right: 0;
+  bottom: 0;
+  left: 0;
   background-color: #44AA44;
   cursor: pointer;
   width: 20px;
@@ -217,15 +229,15 @@ body {
   position: absolute;
 }
 #one-map {
-  top: 400px;
+  top: 200px;
   left: 0;
 }
 .map-container#light-world-container {
-  top: 400px;
+  top: 200px;
   left: 603px;
 }
 .map-container#dark-world-container {
-  top: 400px;
+  top: 200px;
   left: 0;
 }
 .map-tracker#light-world {
@@ -521,11 +533,11 @@ body {
 .icon-image.boots {
   background-image: url(../icons/boots.png);
 }
-.new-icons .icon-image.entrance {
-  background-image: url(../icons/entrance.png);
+.icon-image.bunny {
+  background-image: url(../icons/bunny.png);
 }
-.og-sephs .icon-image.entrance {
-  background-image: url(../icons/ether.png);
+.icon-image.entrance {
+  background-image: url(../icons/entrance.png);
 }
 .icon-image.lamp {
   background-image: url(../icons/lamp.png);
@@ -634,6 +646,7 @@ body {
 }
 .saha-color {
   color: rgb(0, 168, 72);
+  font-size: 11px;
 }
 .psh-color {
   color: rgb(156, 120, 252);
