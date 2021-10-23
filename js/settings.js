@@ -10,6 +10,7 @@ class Settings {
 	visible: 1,
 	overworld: 1,
 	connectors: 1,
+	useMaps: 1,
 	ogSephs: 0,
 	autoTracking: 0,
 	autoTrackingPort: 8080
@@ -18,8 +19,14 @@ class Settings {
   constructor() {
     $('#load-button').on('click', () => {
 	  const ogSephs = $('#enable-og-sephs').is(':checked') ? 1 : 0;
+	  const useMaps = $('#enable-maps').is(':checked') ? 1 : 0;
 	  
 	  $('body').addClass(ogSephs ? 'og-sephs' : 'new-icons');
+	  if (!useMaps) {
+	    for (const el of $('.map-container')) {
+		  $(el).css('display', 'none');
+		}
+	  }
 	});
   }
   
@@ -33,6 +40,7 @@ class Settings {
 	  overworld: $('#enable-overworld').is(':checked') ? 1 : 0,
 	  connectors: $('#enable-connectors').is(':checked') ? 1 : 0,
 	  ogSephs: $('#enable-og-sephs').is(':checked') ? 1 : 0,
+	  useMaps: $('#enable-maps').is(':checked') ? 1 : 0,
 	  autoTracking: $('#enable-auto-tracking').is(':checked') ? 1 : 0,
 	  autoTrackingPort: $('#auto-tracking-port').val()
 	};
@@ -51,6 +59,7 @@ class Settings {
 	$('#enable-visible').prop('checked', !!this.#settings.visible);
 	$('#enable-overworld').prop('checked', !!this.#settings.overworld);
 	$('#enable-connectors').prop('checked', !!this.#settings.connectors);
+	$('#enable-maps').prop('checked', !!this.#settings.useMaps);
 	$('#enable-og-sephs').prop('checked', !!this.#settings.ogSephs);
 	$('#enable-auto-tracking').prop('checked', !!this.#settings.autoTracking);
 	$('#auto-tracking-port').val(this.#settings.autoTrackingPort);
