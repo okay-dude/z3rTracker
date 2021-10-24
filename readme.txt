@@ -36,6 +36,8 @@ Auto tracking only tracks chests that you opened that are also not in dungeons. 
 
 ------
 
+I do not recommend using most of the location text box trackers unless you also use auto-tracking. It will likely be overwhelming to track.
+
 If you refresh the page on accident somehow, it shouldn't lose any progress (it autosaves every 5 seconds). 
 
 If you need to save your current progress and close the tab/browser, you should click the save button. This will download a config.json file that you can load later with your current progress.
@@ -44,4 +46,16 @@ If you accidently close the browser tab, you will lose everything if you have no
 
 ------
 
-Only tested this on chrome on windows. Good luck with other browsers.
+Only tested this on chrome on windows. Good luck with other browsers. I'm pretty sure some stuff will be broken with Firefox (it does not support the zoom css property).
+
+------
+
+Auto-tracking Resources:
+
+http://usb2snes.com/ - has links to all auto tracking resources
+
+https://skarsnik.github.io/QUsb2snes/ - qusb2snes (it works with emulator and sd2snes).
+
+https://github.com/RedGuyyyy/sd2snes/releases - firmware (if you are using sd2snes)
+
+https://drive.google.com/drive/folders/1_ej-pwWtCAHYXIrvs5Hro16A1s9Hi3Jz - snes9x 1.6x with lua scripting support
