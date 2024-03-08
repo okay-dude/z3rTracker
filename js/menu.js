@@ -27,6 +27,7 @@ class Menu {
 				this.openMenu();
 				let x = e.offsetX, y = e.offsetY;
 				const icon = target.closest('.icon.placed');
+				let adjustZoom = true;
 				if (icon) {
 					if ($(icon).find('.icon-image.entrance').length === 1) {
 						this.#toRemove = icon;
@@ -36,8 +37,9 @@ class Menu {
 						x += icon.offsetLeft;
 						y += icon.offsetTop;
 					}
+					adjustZoom = false;
 				}
-				this.placeMarker(x, y);
+				this.placeMarker(x, y, adjustZoom);
 			} else {
 				$('.find-item').css('display', 'block');
 				if (target.closest('.icon') && !target.closest('.placed')) {
@@ -107,12 +109,14 @@ class Menu {
 		this.#open = false;
 	}
 
-	placeMarker(x, y) {
+	placeMarker(x, y, adjustZoom = true) {
 		x -= 8;
 		y -= 12;
-		const zoom = this.#zoomer.getZoom(this.#el);
-		x = x / zoom;
-		y = y / zoom;
+		if (adjustZoom) {
+			const zoom = this.#zoomer.getZoom(this.#el);
+			x = x / zoom;
+			y = y / zoom;
+		}
 		const div = document.createElement('div');
 		$(div).addClass('marker').css({left: x, top: y}).text('X');
 		this.#el.appendChild(div);
