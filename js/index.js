@@ -9,7 +9,7 @@ $(function() {
 	const configurable = {};
 	
 	const zoomer = new Zoomer();
-    const mover = new Mover();
+	const mover = new Mover();
 	const resizer = new Resizer();
 	
 	const menuEl = $('.menu-container')[0];
@@ -24,6 +24,13 @@ $(function() {
 	for (const icon of $(menuEl).find('.icon[data-connector="true"]')) {
 	  connectors.appendChild(icon.cloneNode(true));
 	}
+
+	$('body').on('click', '#connectors .icon', e => {
+		const icon = e.target.closest('.icon');
+		if (icon) {
+			$(icon).toggleClass('used');
+		}
+	});
 	
 	menuEl.remove();
 	

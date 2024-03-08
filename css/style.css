@@ -346,8 +346,8 @@ body {
 #connectors .icon {
   width: 24px;
   height: 24px;
-  cursor: default;
   border: 0;
+  cursor: pointer;
 }
 
 .empty.icon:hover {
@@ -538,6 +538,16 @@ body {
 }
 .icon-image.entrance {
   background-image: url(../icons/entrance.png);
+}
+.icon.placed .icon-image.entrance {
+  width: 16px;
+  height: 16px;
+  margin: 0;
+}
+.icon.placed:has(> .icon-image.entrance) {
+  width: 16px;
+  height: 16px;
+  margin: 1px 0 0 4px;
 }
 .icon-image.lamp {
   background-image: url(../icons/lamp.png);
